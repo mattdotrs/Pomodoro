@@ -74,27 +74,27 @@ function startTimer() {
 updateTimer(focusSession);
 
 document.getElementById('FocusSelect')?.addEventListener('click', () => {
-    document.getElementById('Message').innerText = "Time to focus!";
-    focusSession = document.getElementById('FocusSeshLength').value * 60;
+    document.getElementById('Message')!.innerText = "Time to focus!";
+    focusSession = +(document.getElementById('FocusSeshLength') as HTMLInputElement).value * 60;
     updateTimer(focusSession);
 });
     
 document.getElementById('BreakSelect')?.addEventListener('click', () => {
-    document.getElementById('Message').innerText = "Time to rest";
-    breakTime = document.getElementById('BreakLength').value * 60;
+    document.getElementById('Message')!.innerText = "Time to rest";
+    breakTime = +(document.getElementById('BreakLength') as HTMLInputElement).value * 60;
     updateTimer(breakTime);
 });
 
 document.getElementById('StartTimer')?.addEventListener('click', () => {
     startTimer();
-    document.getElementById('StartTimer').style["display"] = "none";
-    document.getElementById('StopTimer').style["display"] = "inline";
+    document.getElementById('StartTimer')!.style["display"] = "none";
+    document.getElementById('StopTimer')!.style["display"] = "inline";
 });
 
 document.getElementById('StopTimer')?.addEventListener('click', () => {
     clearInterval(interval);
-    document.getElementById('StartTimer').style["display"] = "inline";
-    document.getElementById('StopTimer').style["display"] = "none";
+    document.getElementById('StartTimer')!.style["display"] = "inline";
+    document.getElementById('StopTimer')!.style["display"] = "none";
 });
 
 document.getElementById('ResetTimer')?.addEventListener('click', () => {
