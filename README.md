@@ -1,7 +1,8 @@
-# Tauri + Vanilla TS
+# ![Pomodoro.png](https://github.com/mattdotrs/Pomodoro/blob/main/src-tauri/icons/64x64.png) Unnamed Pomodoro App
+> A simple pomodoro timer built using Tauri. Styled with simple vanilla CSS.
 
-This template should help get you started developing with Tauri in vanilla HTML, CSS and Typescript.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## Features
+- [ ] Fully functional timers
+- [X] Custom timer length support
+- [X] Support for both focus mode and breaks
+- [ ] Optional notifications for timer stops
