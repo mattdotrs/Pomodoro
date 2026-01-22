@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div id="titlebar"></div>
+      <button id="titlebar-minimize">_</button>
+      <button id="titlebar-close">x</button>
+    </header>
+      <main>
+        <div class="Timer">
+          <h1 id="Message">Time to focus!</h1>
+          <span id="Timer"></span>
+          <button id="StartTimer">Start</button>
+          <button id="StopTimer">Stop</button>
+          <button id="ResetTimer">Reset</button>
+        </div>
+      </main>
+      <div id="Selector">
+            <button id="FocusSelect">Focus</button>
+            <button id="BreakSelect">Break</button>
+        </div>
+        <div>
+          <label for="FocusSeshLength">Session length</label>
+          <input class="TimerSettings" type="number" value="25" step="5" id="FocusSeshLength" min="15"><label for="FocusSeshLength">mins</label>
+          <br>
+          <label for="BreakLength">Break length</label>
+          <input class="TimerSettings" type="number" value="5" step="5" id="BreakLength" min="5"><label for="BreakLength">mins</label>
+        </div>
+  </body>
+</html>

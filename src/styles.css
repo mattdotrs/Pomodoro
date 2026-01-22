@@ -1,0 +1,99 @@
+:root {
+  padding: 0%;
+  --background: #dad0d0;
+  --backgroundFocus: #eAe0e0;
+  --textMain: #20202A;
+  --accent: #f24343;
+  --secondary: #85db6c;
+  --border: #8a6e6e;
+  --insetShadow: inset 0px 0px 2px var(--textMain);
+  background: transparent;
+
+}
+
+
+body {
+  padding: 4px;
+  user-select: none;
+  font-size: 1.6rem;
+  text-align: center;
+  font-family: monospace;
+  width: 100vpw;
+  height: 100vph;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  align-items: center;
+  background-color: var(--background);
+  color: var(--textMain);
+
+  h1 {
+    color: var(--accent);
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+
+  header {
+    padding: 8px;
+    user-select: none;
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    #titlebar {
+      width: 100%;
+    }
+    button {
+      margin: 2px 8px;
+      height: min-content;
+      width: min-content;
+      font-weight: 600;
+    }
+  }
+  main {
+    background-color: var(--backgroundFocus);
+    padding: 4px 64px 24px;
+    width: max-content;
+    height: max-content;
+    border-radius: 0.8em;
+  }
+
+  span {
+    font-size: 2.4rem;
+    font-weight: 800;
+    display: block;
+    padding: 0.4em 0;
+  }
+
+  button, input[type=number] {
+    font-family: monospace;
+    background-color: var(--backgroundFocus);
+    border: none;
+    font-size: 1.2rem;
+    padding: 0.2em 0.8em;
+    border-radius: 0.6em;
+    border: 1px solid var(--border);
+    border-bottom-width: 4px;
+    box-shadow: 0px 0px 0px 2px var(--backgroundFocus);
+
+    &.TimerSettings {
+      font-size: 1.2rem;
+      width: 2em;
+      margin-right: 4px;
+    }
+    &:active {
+      border-bottom-width: 1px;
+      border-color: var(--accent);
+    }
+    &:hover {
+      border-color: var(--accent);
+    }
+  }
+  
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
