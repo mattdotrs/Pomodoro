@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: Nunito; /* set name */
-  src: url("/src-tauri/fonts/Nunito.ttf");
+  src: url("/src/assets/fonts/Nunito.ttf");
 }
 
 #StopTimer {
