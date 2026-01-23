@@ -1,10 +1,10 @@
 :root {
-  --background: #dad0d0;
-  --backgroundFocus: #eAe0e0;
-  --textMain: #20202A;
+  --background: #ebeeea;
+  --backgroundFocus: #fbfefa;
   --accent: #f24343;
-  --secondary: #85db6c;
-  --border: #8a6e6e;
+  --secondary: #64cb41;
+  --textMain: #6a9d5b;
+  --border: var(--textMain);
 }
 
 @font-face {
@@ -16,6 +16,16 @@
   display: none;
 }
 
+@keyframes bounce {
+  from { transform: translate3d(0, 5, 0);}
+  to { transform: translate3d(0, -15px, 0);}
+}
+
+img {
+  width: 22%;
+  margin: 0%;
+  padding: 0%;
+}
 
 body {
   display: flex;
@@ -28,17 +38,16 @@ body {
   width: 100vpw;
   height: 100vph;
   font-weight: 600;
-  background-color: var(--backgroundFocus);
+  background-color: var(--background);
   color: var(--textMain);
 
   h1 {
-    color: var(--accent);
     font-size: 1.4rem;
-    font-weight: 800;
+    font-weight: 900;
   }
 
   header {
-    padding: 4px;
+    padding: 2px;
     user-select: none;
     display: flex;
     justify-content: end;
@@ -50,57 +59,63 @@ body {
       margin: 2px 8px;
       height: min-content;
       width: min-content;
-      font-weight: 600;
+      font-weight: 800;
     }
   }
   main {
     border-radius: 0.2em;
-    background-color: var(--background);
     padding: 8px;
-    width: 90dvw;
-    height: 82dvh;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.8em;
+    gap: 0.2em;
     align-items: center;
     .Timer {
       background-color: var(--backgroundFocus);
       padding: 16px;
-      width: 10em;
-      height: max-content;
-      border-radius: 0.8rem
+      width: 12em;
+      height: min-content;
+      border-radius: 0.8rem;
+      border: 1px solid var(--border);
+      border-bottom-width: 6px;
+      box-shadow: 0px 0px 0px 2px var(--backgroundFocus);
     }
   }
 
   span {
     font-size: 2.4rem;
-    font-weight: 800;
+    font-weight: 900;
     display: block;
-    padding: 0.4em 0;
+    padding: 0.2em 0;
   }
 
-  button, input[type=number] {
-    font-family: monospace;
-    background-color: var(--backgroundFocus);
+  button, input {
+    color: var(--backgroundFocus);
+    font-weight: 800;
+    font-family: Nunito, monospace;
+    background-color: var(--secondary);
     border: none;
     font-size: 1.2rem;
     padding: 0.2em 0.8em;
     border-radius: 0.6em;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-bottom-width: 4px;
     box-shadow: 0px 0px 0px 2px var(--backgroundFocus);
+    &[type=number] {
+      background-color: var(--backgroundFocus);
+      color: var(--textMain);
+    }
 
     &.TimerSettings {
       font-size: 1.2rem;
       width: 2em;
       margin-right: 4px;
     }
+
     &:active {
+      border: 2px solid var(--border);
       border-bottom-width: 1px;
-      border-color: var(--accent);
-    }
-    &:hover {
-      border-color: var(--accent);
+      border-color: var(--secondary);
     }
   }
   

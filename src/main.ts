@@ -54,13 +54,16 @@ function updateTimer(time? : number) : any {
 }
 
 function startTimer() {
-    lastUsedTime = currentTime;
+    document.getElementById('Tomato')!.style["animation"] = 'none';
     interval = setInterval(() => {
         --currentTime;
         updateTimer();
         if (currentTime === 0) {
+            document.getElementById('Tomato')!.style["animation"] = 'bounce 0.4s alternate infinite';
             clearInterval(interval);
-            var audio = new Audio('/src-tauri/audio/finish.wav');
+            document.getElementById('StartTimer')!.style["display"] = "inline";
+            document.getElementById('StopTimer')!.style["display"] = "none";
+            var audio = new Audio('/src/assets/finish.wav');
             audio.play();
             if (permissionGranted) {
                 sendNotification({ title: 'Pomodoro', body: 'Time\'s up!' });
@@ -77,12 +80,14 @@ document.getElementById('FocusSelect')?.addEventListener('click', () => {
     document.getElementById('Message')!.innerText = "Time to focus!";
     focusSession = +(document.getElementById('FocusSeshLength') as HTMLInputElement).value * 60;
     updateTimer(focusSession);
+    lastUsedTime = focusSession;
 });
     
 document.getElementById('BreakSelect')?.addEventListener('click', () => {
-    document.getElementById('Message')!.innerText = "Time to rest";
+    document.getElementById('Message')!.innerText = "Time to rest!";
     breakTime = +(document.getElementById('BreakLength') as HTMLInputElement).value * 60;
     updateTimer(breakTime);
+    lastUsedTime = breakTime;
 });
 
 document.getElementById('StartTimer')?.addEventListener('click', () => {
