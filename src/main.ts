@@ -58,18 +58,25 @@ function startTimer() {
     interval = setInterval(() => {
         --currentTime;
         updateTimer();
-        if (currentTime === 0) {
-            document.getElementById('Tomato')!.style["animation"] = 'bounce 0.4s alternate infinite';
+        if (currentTime <= 0) {
+            document.getElementById('Tomato')!.style["animation"] = 'none';
             clearInterval(interval);
             document.getElementById('StartTimer')!.style["display"] = "inline";
             document.getElementById('StopTimer')!.style["display"] = "none";
-            var audio = new Audio('/src/assets/finish.wav');
+            let audio = (document.getElementById('CompletedSound') as HTMLAudioElement);
             audio.play();
             if (permissionGranted) {
-                sendNotification({ title: 'Pomodoro', body: 'Time\'s up!' });
+                sendNotification({ title: 'Session finished', body: 'Time\'s up!' });
             }
             currentTime = lastUsedTime;
             updateTimer();
+        } else {
+            document.getElementById('Tomato')!.style["animation"] = 'bounce 0.4s alternate infinite';
+            if (currentTime === 60) {
+                if (permissionGranted) {
+                    sendNotification({ title: '1 minute left', body: 'Your timer ends in 60 seconds.' });
+                }
+            }
         }
     }, 1000)
 }
@@ -97,13 +104,13 @@ document.getElementById('StartTimer')?.addEventListener('click', () => {
 });
 
 document.getElementById('StopTimer')?.addEventListener('click', () => {
+    document.getElementById('Tomato')!.style["animation"] = 'none';
     clearInterval(interval);
     document.getElementById('StartTimer')!.style["display"] = "inline";
     document.getElementById('StopTimer')!.style["display"] = "none";
 });
 
 document.getElementById('ResetTimer')?.addEventListener('click', () => {
-    clearInterval(interval);
     clearInterval(interval);
     currentTime = lastUsedTime;
     updateTimer();
