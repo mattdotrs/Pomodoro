@@ -1,8 +1,12 @@
 # ![Pomodoro.png](https://github.com/mattdotrs/Pomodoro/blob/main/src-tauri/icons/64x64.png) Unnamed Pomodoro App
 > A simple pomodoro timer built for personal use.
 # Features
-- [X] **Fully functional timers and control:** Start, stop and reset timers
-- [X] **Focus and Break mode:** Ability to choose between two different modes with custom time intervals
+⏲️ **Fully functional timers and control:** Start, stop and reset timers
+
+🍅**Focus and Break mode:** Ability to choose between two different modes with custom time intervals
+
+📥 **Native notifications:** Get notified when your timer is about to end and when it has stopped
+
 # Development 
 The app is built with Typescript and the [Tauri](tauri.app) framework. I started developing this as a side project during uni break, as I wanted to practice my Javascript abilities building something that wouldn't take me more than a week or two and learn Typescript in the process. 
 
