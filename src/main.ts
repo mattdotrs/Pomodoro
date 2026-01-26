@@ -40,7 +40,10 @@ let lastUsedTime = 0;
 let interval : any;
 
 function updateTimer(time? : number) : any {
-    if (time !== undefined) {currentTime = time;}
+    if (time !== undefined) {
+        currentTime = time;
+        lastUsedTime = time;
+    }
     let currentSession: Time = {
         minutes: Math.floor(currentTime / 60),
         seconds: currentTime % 60
