@@ -21,6 +21,17 @@
   to { transform: translate3d(0, -15px, 0);}
 }
 
+@keyframes bigger {
+  from { transform: scale(1);}
+  to { transform: scale(1.1);}
+}
+
+#Tomato {
+  &:hover {
+    animation: bigger 0.8s alternate infinite;
+  }
+}
+
 img {
   width: 22%;
   margin: 0%;
@@ -116,6 +127,10 @@ body {
       border: 2px solid var(--border);
       border-bottom-width: 1px;
       border-color: var(--secondary);
+    }
+    &:hover {
+      animation: bigger 0.2s ease-in;
+      transform: scale(1.1);
     }
   }
   
