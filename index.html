@@ -25,7 +25,7 @@
           <button id="FocusSelect">Focus</button>
           <button id="BreakSelect">Break</button>
         </div>
-        <div>
+        <div id="TimerSettings">
           <label for="FocusSeshLength">Session length</label>
           <input class="TimerSettings" type="number" value="25" step="5" id="FocusSeshLength" min="15"><label for="FocusSeshLength">mins</label>
           <br>
@@ -33,6 +33,7 @@
           <input class="TimerSettings" type="number" value="5" step="5" id="BreakLength" min="5"><label for="BreakLength">mins</label>
         </div>
         <audio src="./src/assets/finish.wav" type="audio/wav" id="CompletedSound">Audio</audio>
+        <audio src="./src/assets/click.wav" type="audio/wav" id="ClickSound">Audio</audio>
         </main>
   </body>
 </html>
