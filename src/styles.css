@@ -126,7 +126,6 @@ body {
     &:active {
       border: 2px solid var(--border);
       border-bottom-width: 1px;
-      border-color: var(--secondary);
     }
     &:hover {
       animation: bigger 0.2s ease-in;
