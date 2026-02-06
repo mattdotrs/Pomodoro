@@ -26,6 +26,14 @@ if (e.buttons === 1) {
     }
 });
 
+let buttons = Array.from(document.getElementsByTagName('button'));
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        let clickSound = (document.getElementById('ClickSound') as HTMLAudioElement);
+        clickSound.play();
+    })
+});
+
 const timerSpan : any = document.getElementById('Timer');
 
 interface Time {
