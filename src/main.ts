@@ -56,7 +56,18 @@ function updateTimer(time? : number) : any {
     timerSpan.innerText = `${currentSession.minutes}:${currentSession.seconds.toString().padStart(2, '0')}`;
 }
 
+function hideModeSelector(hide : boolean) : void {
+    const selectorElement = document.getElementById('Selector');
+    if (hide === true) {
+        selectorElement!.style["display"] = "none";
+    } else if (hide == false) {
+        selectorElement!.style["display"] = "block";
+    }
+}
+
 function startTimer() {
+    let audio = (document.getElementById('CompletedSound') as HTMLAudioElement);
+    hideModeSelector(true);
     document.getElementById('Tomato')!.style["animation"] = 'none';
     interval = setInterval(() => {
         --currentTime;
@@ -66,7 +77,7 @@ function startTimer() {
             clearInterval(interval);
             document.getElementById('StartTimer')!.style["display"] = "inline";
             document.getElementById('StopTimer')!.style["display"] = "none";
-            let audio = (document.getElementById('CompletedSound') as HTMLAudioElement);
+            hideModeSelector(false);
             audio.play();
             if (permissionGranted) {
                 sendNotification({ title: 'Session finished', body: 'Time\'s up!' });
@@ -76,6 +87,7 @@ function startTimer() {
         } else {
             document.getElementById('Tomato')!.style["animation"] = 'bounce 0.4s alternate infinite';
             if (currentTime === 60) {
+                audio.play();
                 if (permissionGranted) {
                     sendNotification({ title: '1 minute left', body: 'Your timer ends in 60 seconds.' });
                 }
@@ -111,10 +123,15 @@ document.getElementById('StopTimer')?.addEventListener('click', () => {
     clearInterval(interval);
     document.getElementById('StartTimer')!.style["display"] = "inline";
     document.getElementById('StopTimer')!.style["display"] = "none";
+    hideModeSelector(false);
 });
 
 document.getElementById('ResetTimer')?.addEventListener('click', () => {
+    document.getElementById('Tomato')!.style["animation"] = 'none';
     clearInterval(interval);
+    document.getElementById('StartTimer')!.style["display"] = "inline";
+    document.getElementById('StopTimer')!.style["display"] = "none";
     currentTime = lastUsedTime;
+    hideModeSelector(false);
     updateTimer();
 });
