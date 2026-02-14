@@ -31,5 +31,5 @@ npm run tauri build
 <div style="display: flex; align-items: center;">
   <img style="width: 30%;" src="https://github.com/mattdotrs/Pomodoro/blob/main/screenshots/001.png">
   <img style="width: 30%;" src="https://github.com/mattdotrs/Pomodoro/blob/main/screenshots/003.png">
-  <img style="width: 30%;" src="https://github.com/mattdotrs/Pomodoro/blob/main/screenshots/002.gif">
+  <img style="width: 60%;" src="https://github.com/mattdotrs/Pomodoro/blob/main/screenshots/002.gif">
 </div>
