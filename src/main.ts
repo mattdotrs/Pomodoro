@@ -93,7 +93,7 @@ function startTimer() {
             currentTime = lastUsedTime;
             updateTimer();
         } else {
-            document.getElementById('Tomato')!.style["animation"] = 'bounce 0.4s alternate infinite';
+            document.getElementById('Tomato')!.style["animation"] = 'bounce 0.3s alternate infinite';
             if (currentTime === 60) {
                 audio.play();
                 if (permissionGranted) {
