@@ -28,8 +28,8 @@ You can alternatively build the app yourself, for more details refer to the Wind
 npm run tauri build
 ```
 ## Screenshots
-<div style="display: flex;">
+<div style="display: flex; align-items: center;">
   <img style="width: 30%;" src="https://github.com/mattdotrs/Pomodoro/blob/main/screenshots/001.png">
-  <img style="width: 30%;" src="https://github.com/mattdotrs/Pomodoro/blob/main/screenshots/002.png">
   <img style="width: 30%;" src="https://github.com/mattdotrs/Pomodoro/blob/main/screenshots/003.png">
+  <img style="width: 75%;" src="https://github.com/mattdotrs/Pomodoro/blob/main/screenshots/002.gif">
 </div>
