@@ -8,6 +8,7 @@
 
   <body>
     <header>
+      
       <div id="titlebar"></div>
       <button id="titlebar-minimize">_</button>
       <button id="titlebar-close">x</button>
@@ -18,7 +19,7 @@
           <img src="src\assets\Pomodoro.svg" alt="*" id="Tomato">
           <span id="Timer"></span>
           <button id="StartTimer">Start</button>
-          <button id="StopTimer">Stop</button>
+          <button id="StopTimer">Pause</button>
           <button id="ResetTimer">Reset</button>
         </div>
         <div id="Selector">
@@ -32,6 +33,7 @@
           <label for="BreakLength">Break length</label>
           <input class="TimerSettings" type="number" value="5" step="5" id="BreakLength" min="5"><label for="BreakLength">mins</label>
         </div>
+        
         <audio src="./src/assets/finish.wav" type="audio/wav" id="CompletedSound">Audio</audio>
         <audio src="./src/assets/click.wav" type="audio/wav" id="ClickSound">Audio</audio>
         </main>
