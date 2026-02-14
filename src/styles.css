@@ -26,10 +26,12 @@
   }
 }
 
-
-#Tomato {
-  &:hover {
-    animation: bigger 0.8s alternate infinite;
+@keyframes bigger {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
   }
 }
 
